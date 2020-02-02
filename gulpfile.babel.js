@@ -9,6 +9,7 @@
 // gulp-rename      : 파일의 이름을 바꿔주는 모듈
 // gulp-jade        : HTML 템플릿 중 하나인 jade 템플릿을 사용할 수 있게 하는 모듈
 // gulp-sass        : sass를 사용할 수 있게 해주는 모듈
+// gulp-clean-css   : css 파일을 이쁘게 압축해주는 모듈
 // del              : 폴더(디렉터리)/파일 제거
 // gulp-connect     : local 서버와 연결하게 해주는 모듈
 // gulp-open        : 브라우저를 열게하는 모듈
@@ -29,6 +30,7 @@ import babel from 'gulp-babel';
 import rename from 'gulp-rename';
 import jade from 'gulp-jade';
 import sass from 'gulp-sass';
+import cleanCss from 'gulp-clean-css';
 import del from 'del';
 import connect from 'gulp-connect';
 import open from 'gulp-open';
@@ -101,6 +103,7 @@ const Sass = () => {
             outputStyle: 'compact' // nested, expanded, compact, compressed
         }).on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
+        .pipe(cleanCss({ format: 'keep-breaks' }))
         .pipe(dest(config.path.sass.dest, {sourcemaps: true}))
         .pipe(connect.reload())
 };
