@@ -1,0 +1,27 @@
+// 테마 변수 : light | dark
+$theme: dark;
+
+// 조건 처리
+@if $theme == light {
+  $bg-color: #f34e7b;
+} @else if $theme == very-light {
+  $bg-color: #f8c9d6;
+} @else {
+  $bg-color: #61051f;
+}
+
+// 테마 클래스 속성 및
+// 배경/전경 컬러 색상 설정
+body.#{$theme}-theme {
+  background-color: $bg-color;
+  color: invert($bg-color);
+}
+
+// if(조건, 참일 경우 값, 거짓일 경우 값)
+// 가운데 정렬 유무 설정
+$center-pos: false;
+$is-center: if($center-pos, auto, null);
+
+.container {
+  @include margin(null, $is-center);
+}

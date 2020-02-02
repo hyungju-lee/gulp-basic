@@ -1,0 +1,44 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+nav {
+  background-color: #222;
+}
+
+#page {
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+
+  .article {
+    position: relative;
+    margin: {
+      right: 10px;
+      left: 30px;
+    }
+  }
+
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  a {
+    text-decoration: none;
+    color: #069aea;
+
+    &:hover {
+      padding-bottom: 0.1rem;
+      color: #023855;
+    }
+
+    .rgba & {
+      color: rgba(6, 154, 234, 0.8);
+    }
+  }
+}

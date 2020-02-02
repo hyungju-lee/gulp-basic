@@ -1,0 +1,16 @@
+// Scss 한줄 주석
+/* Scss 여러줄 주석, CSS로 컴파일 될 때 해석됩니다. */
+%btn {
+  padding: 10px;
+  border: 1px solid #222;
+}
+
+.btn-check {
+  @extend %btn;
+  background-color: #cecece;
+}
+
+.btn-click {
+  @extend %btn;
+  background-color: $fg-color;
+}

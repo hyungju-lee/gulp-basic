@@ -1,0 +1,27 @@
+@charset "utf-8";
+@import "modules/_variables";
+@import "modules/_button";
+@import "pages/_page1";
+@import "modules/_mixins";
+@import "modules/_condition";
+@import "modules/_loop";
+
+@include html5-block;
+
+nav ul, #gbn ul, #lnb ul {
+  @include reset-list;
+  font-family: $myungjo;
+  color: $bg-color;
+}
+
+.login-box {
+  @include position(absolute, 0, 10px);
+  @include size(24rem, 10rem);
+}
+/* 주석 */
+.error {
+  @include position($type: absolute, $r: 10px);
+  @include size(320px);
+  @include transition(width 0.2s, height 0.4s ease-out);
+  @include transform(scale(1.5));
+}

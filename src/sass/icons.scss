@@ -1,0 +1,17 @@
+@import "modules/_sprite";
+
+/* 필요한 거 1배수만 가져오기 */
+.arrow-r {
+  @include sprite($arrow-r);
+}
+
+/* 필요한 것만 1, 2배수 가져오기 */
+.arrow-r {
+  @include retina-sprite($arrow-r-group);
+}
+
+/* 1배수 이미지 모두 */
+@include sprites($spritesheet-sprites);
+
+/* 1, 2배수 이미지 모두 */
+@include retina-sprites($retina-groups);

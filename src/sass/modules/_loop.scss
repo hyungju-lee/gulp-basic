@@ -1,0 +1,41 @@
+// 페이지 폭
+$page-width: 960px;
+// 컬럼 개수
+$columns: 24;
+// 거터
+$gutter: 20px;
+// 컬럼 폭
+$col-width: (($page-width - $gutter) - ($gutter*($columns - 1))) / $columns;
+
+%col {
+  float: left;
+  margin-right: $gutter;
+}
+
+// 조건이 3보다 작거나 같으면 코드 반복 생성
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    @extend %col;
+    width: ($col-width * $i) + ($gutter * ($i - 1));
+  }
+}
+
+// ---------------------------------------------
+/* 아이콘(icon) 설정 */
+// ---------------------------------------------
+@each $item, $w, $h in (git, 24px, 24px), (nodejs, 32px, 32px), (gulpjs, 24px, 24px), (jade, 16px, 16px) {
+  .icon-#{$item} {
+    width: $w;
+    height: $h;
+    background-image: url("images/#{$item},png");
+  }
+}
+
+// ---------------------------------------------
+/* 제목(Heading) 설정 */
+// ---------------------------------------------
+@each $H in (h1:3rem, h2:2rem, h3:1.7rem, h4:1.5rem, h5:1.3rem, h6:1rem) {
+  #{nth($H, 1)} {
+    font-size: nth($H, 2);
+  }
+}

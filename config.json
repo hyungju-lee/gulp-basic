@@ -1,0 +1,42 @@
+{
+  "port": 90,
+  "livereload": true,
+  "browser": "chrome",
+  "path": {
+    "del": {
+      "dest": "dist/"
+    },
+    "jade": {
+      "src": "src/jade/**/!(_)*.jade",
+      "parts": "src/jade/parts/*.jade",
+      "dest": "dist/"
+    },
+    "sass": {
+      "src": "src/sass/**/*.{scss, sass}",
+      "compassSrc": "src/sass/",
+      "dest": "dist/css/"
+    },
+    "js": {
+      "libs": "src/js/libs/**/*.js",
+      "libsDest": "dist/js/libs/",
+      "src": "src/js/*.js",
+      "dest": "dist/js/",
+      "filename": "DOMlibrary.js"
+    },
+    "img": {
+      "src": "src/img/*",
+      "dest": "dist/img/"
+    },
+    "spImg": {
+      "src": "src/img/sp/*.png",
+      "dest": "dist/img/sp/",
+      "filename": "sprite.png",
+      "imgPath": "../img/sp/sprite.png"
+    },
+    "retinaImg": {
+      "src": "src/img/sp/*@2x.png",
+      "filename": "sprite@2x.png",
+      "retinaImgPath": "../img/sp/sprite@2x.png"
+    }
+  }
+}

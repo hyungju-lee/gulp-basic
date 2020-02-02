@@ -1,0 +1,17 @@
+//- 현재 페이지 경로
+-var curPage='/'
+
+//- 믹스인 2Depth 정의
+mixin navi2D(naviContents2)
+    nav: ul
+        each D1_item in naviContents2
+            li
+                +naviLink(D1_item)
+                if D1_item.child
+                    ul
+                        each D2_item in D1_item.child
+                            li
+                                +naviLink(D2_item)
+
+mixin naviLink(item)
+    a(href=item.link)=item.content+curPage

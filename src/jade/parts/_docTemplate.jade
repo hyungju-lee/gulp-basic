@@ -1,0 +1,8 @@
+doctype html
+block lang
+    - var language = 'ko'
+html(lang=language === 'ko' ? 'ko-KR' : language === 'en' ? 'en' : '')
+    include _head
+body.dark-theme
+    include _navigation
+    | 안녕?

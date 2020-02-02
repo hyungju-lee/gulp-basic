@@ -1,0 +1,226 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$arrow-r-name: 'arrow-r';
+$arrow-r-x: 0px;
+$arrow-r-y: 172px;
+$arrow-r-offset-x: 0px;
+$arrow-r-offset-y: -172px;
+$arrow-r-width: 140px;
+$arrow-r-height: 71px;
+$arrow-r-total-width: 384px;
+$arrow-r-total-height: 322px;
+$arrow-r-image: '../img/sp/sprite.png';
+$arrow-r: (0px, 172px, 0px, -172px, 140px, 71px, 384px, 322px, '../img/sp/sprite.png', 'arrow-r', );
+$image1-name: 'image1';
+$image1-x: 229px;
+$image1-y: 0px;
+$image1-offset-x: -229px;
+$image1-offset-y: 0px;
+$image1-width: 155px;
+$image1-height: 148px;
+$image1-total-width: 384px;
+$image1-total-height: 322px;
+$image1-image: '../img/sp/sprite.png';
+$image1: (229px, 0px, -229px, 0px, 155px, 148px, 384px, 322px, '../img/sp/sprite.png', 'image1', );
+$pentagon-name: 'pentagon';
+$pentagon-x: 0px;
+$pentagon-y: 0px;
+$pentagon-offset-x: 0px;
+$pentagon-offset-y: 0px;
+$pentagon-width: 227px;
+$pentagon-height: 170px;
+$pentagon-total-width: 384px;
+$pentagon-total-height: 322px;
+$pentagon-image: '../img/sp/sprite.png';
+$pentagon: (0px, 0px, 0px, 0px, 227px, 170px, 384px, 322px, '../img/sp/sprite.png', 'pentagon', );
+$round-name: 'round';
+$round-x: 0px;
+$round-y: 245px;
+$round-offset-x: 0px;
+$round-offset-y: -245px;
+$round-width: 73px;
+$round-height: 77px;
+$round-total-width: 384px;
+$round-total-height: 322px;
+$round-image: '../img/sp/sprite.png';
+$round: (0px, 245px, 0px, -245px, 73px, 77px, 384px, 322px, '../img/sp/sprite.png', 'round', );
+$arrow-r-2x-name: 'arrow-r@2x';
+$arrow-r-2x-x: 0px;
+$arrow-r-2x-y: 344px;
+$arrow-r-2x-offset-x: 0px;
+$arrow-r-2x-offset-y: -344px;
+$arrow-r-2x-width: 280px;
+$arrow-r-2x-height: 142px;
+$arrow-r-2x-total-width: 768px;
+$arrow-r-2x-total-height: 644px;
+$arrow-r-2x-image: '../img/sp/sprite@2x.png';
+$arrow-r-2x: (0px, 344px, 0px, -344px, 280px, 142px, 768px, 644px, '../img/sp/sprite@2x.png', 'arrow-r@2x', );
+$image1-2x-name: 'image1@2x';
+$image1-2x-x: 458px;
+$image1-2x-y: 0px;
+$image1-2x-offset-x: -458px;
+$image1-2x-offset-y: 0px;
+$image1-2x-width: 310px;
+$image1-2x-height: 296px;
+$image1-2x-total-width: 768px;
+$image1-2x-total-height: 644px;
+$image1-2x-image: '../img/sp/sprite@2x.png';
+$image1-2x: (458px, 0px, -458px, 0px, 310px, 296px, 768px, 644px, '../img/sp/sprite@2x.png', 'image1@2x', );
+$pentagon-2x-name: 'pentagon@2x';
+$pentagon-2x-x: 0px;
+$pentagon-2x-y: 0px;
+$pentagon-2x-offset-x: 0px;
+$pentagon-2x-offset-y: 0px;
+$pentagon-2x-width: 454px;
+$pentagon-2x-height: 340px;
+$pentagon-2x-total-width: 768px;
+$pentagon-2x-total-height: 644px;
+$pentagon-2x-image: '../img/sp/sprite@2x.png';
+$pentagon-2x: (0px, 0px, 0px, 0px, 454px, 340px, 768px, 644px, '../img/sp/sprite@2x.png', 'pentagon@2x', );
+$round-2x-name: 'round@2x';
+$round-2x-x: 0px;
+$round-2x-y: 490px;
+$round-2x-offset-x: 0px;
+$round-2x-offset-y: -490px;
+$round-2x-width: 146px;
+$round-2x-height: 154px;
+$round-2x-total-width: 768px;
+$round-2x-total-height: 644px;
+$round-2x-image: '../img/sp/sprite@2x.png';
+$round-2x: (0px, 490px, 0px, -490px, 146px, 154px, 768px, 644px, '../img/sp/sprite@2x.png', 'round@2x', );
+$spritesheet-width: 384px;
+$spritesheet-height: 322px;
+$spritesheet-image: '../img/sp/sprite.png';
+$spritesheet-sprites: ($arrow-r, $image1, $pentagon, $round, );
+$spritesheet: (384px, 322px, '../img/sp/sprite.png', $spritesheet-sprites, );
+$retina-spritesheet-width: 768px;
+$retina-spritesheet-height: 644px;
+$retina-spritesheet-image: '../img/sp/sprite@2x.png';
+$retina-spritesheet-sprites: ($arrow-r-2x, $image1-2x, $pentagon-2x, $round-2x, );
+$retina-spritesheet: (768px, 644px, '../img/sp/sprite@2x.png', $retina-spritesheet-sprites, );
+
+// These "retina group" variables are mappings for the naming and pairing of normal and retina sprites.
+//
+// The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
+$arrow-r-group-name: 'arrow-r';
+$arrow-r-group: ('arrow-r', $arrow-r, $arrow-r-2x, );
+$image1-group-name: 'image1';
+$image1-group: ('image1', $image1, $image1-2x, );
+$pentagon-group-name: 'pentagon';
+$pentagon-group: ('pentagon', $pentagon, $pentagon-2x, );
+$round-group-name: 'round';
+$round-group: ('round', $round, $round-2x, );
+$retina-groups: ($arrow-r-group, $image1-group, $pentagon-group, $round-group, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `retina-sprite` mixin sets up rules and a media query for a sprite/retina sprite.
+//   It should be used with a "retina group" variable.
+//
+// The media query is from CSS Tricks: https://css-tricks.com/snippets/css/retina-display-media-query/
+//
+// $icon-home-group: ('icon-home', $icon-home, $icon-home-2x, );
+//
+// .icon-home {
+//   @include retina-sprite($icon-home-group);
+// }
+@mixin sprite-background-size($sprite) {
+  $sprite-total-width: nth($sprite, 7);
+  $sprite-total-height: nth($sprite, 8);
+  background-size: $sprite-total-width $sprite-total-height;
+}
+
+@mixin retina-sprite($retina-group) {
+  $normal-sprite: nth($retina-group, 2);
+  $retina-sprite: nth($retina-group, 3);
+  @include sprite($normal-sprite);
+
+  @media (-webkit-min-device-pixel-ratio: 2),
+         (min-resolution: 192dpi) {
+    @include sprite-image($retina-sprite);
+    @include sprite-background-size($normal-sprite);
+  }
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
+
+// The `retina-sprites` mixin generates a CSS rule and media query for retina groups
+//   This yields the same output as CSS retina template but can be overridden in SCSS
+//
+// @include retina-sprites($retina-groups);
+@mixin retina-sprites($retina-groups) {
+  @each $retina-group in $retina-groups {
+    $sprite-name: nth($retina-group, 1);
+    .#{$sprite-name} {
+      @include retina-sprite($retina-group);
+    }
+  }
+}

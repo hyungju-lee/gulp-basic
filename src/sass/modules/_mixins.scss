@@ -1,0 +1,40 @@
+@mixin reset-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+@mixin html5-block {
+  section, article, nav, aside, header, footer {
+    display: block;
+  }
+}
+
+@mixin position($type:relative, $t:null, $l:null, $b:null, $r:null) {
+  position: $type;
+  top: $t;
+  left: $l;
+  bottom: $b;
+  right: $r;
+}
+
+@mixin size($w:null, $h:null) {
+  width: $w;
+  height: $h;
+}
+
+@mixin transition($args...) {
+  transition: $args;
+}
+
+@mixin transform($args...) {
+  transform: $args;
+}
+
+@mixin margin($tb:null, $lr:null) {
+  margin: {
+    top: $tb;
+    bottom: $tb;
+    left: $lr;
+    right: $lr;
+  }
+}

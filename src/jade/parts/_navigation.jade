@@ -1,0 +1,19 @@
+block mixins
+    include _mixins
+
++navi2D([
+    {link: '/', content: '홈'},
+    {link: '/about', content: '소개'},
+    {
+        link: '/products',
+        content: '제품22',
+        child: [
+            {link: '/products/screen', content: '스크린'},
+            {link: '/products/keyboard', content: '키보드'}
+        ]
+    },
+    {link: '/supports', content: '지원'},
+    {link: '/index2.html', content: 'index2'},
+    {link: '/index3.html', content: 'index3'},
+    {link: '/test.html', content: 'test'}
+])
