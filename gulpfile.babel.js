@@ -29,6 +29,7 @@ import jsUglify from 'gulp-uglify';
 import babel from 'gulp-babel';
 import rename from 'gulp-rename';
 import jade from 'gulp-jade';
+import ejs from 'gulp-ejs';
 import sass from 'gulp-sass';
 import cleanCss from 'gulp-clean-css';
 import del from 'del';
@@ -149,10 +150,23 @@ const JadeCompile = () => {
         .pipe(connect.reload())
 };
 
+// ejs 컴파일
+const EjsCompile = () => {
+    return src(config.path.ejs.src)
+        .pipe(ejs({
+            msg: "Hello Gulp!"
+        }))
+        .pipe(rename({
+            extname: ".html"
+        }))
+        .pipe(dest(config.path.ejs.dest))
+        .pipe(connect.reload())
+};
+
 // 웹 서버 업무 (LiveReload 사용)
 const Server = () => {
     return connect.server({
-        root: config.path.jade.dest,
+        root: config.path.browser.dest,
         port: config.port,
         livereload: config.livereload
     })
@@ -164,7 +178,7 @@ const BrowserOpen = () => {
         uri: 'http://localhost:' + config.port,
         app: config.browser //chrome, firefox, iexplore, opera, safari
     };
-    return src(config.path.jade.dest)
+    return src(config.path.browser.dest)
         .pipe(open(options)); // local 서버가 아닌 파일 경로로 열려면 '<%file.path%>' 를 넣어주면된다.
 };
 
@@ -173,15 +187,16 @@ const BrowserOpen = () => {
 const FileWatch = () => {
     watch([config.path.img.src, config.path.spImg.src], SpriteAndImgCompress);
     watch([config.path.jade.src, config.path.jade.parts], JadeCompile);
-    watch(config.path.sass.src, series(Sass, JadeCompile));
-    watch(config.path.js.src, series(HintJs, ConcatJs, UglifyJs, JadeCompile));
-    watch(config.path.js.libs, Libs, JadeCompile);
+    watch([config.path.ejs.src, config.path.ejs.parts], EjsCompile);
+    watch(config.path.sass.src, series(Sass, JadeCompile, EjsCompile));
+    watch(config.path.js.src, series(HintJs, ConcatJs, UglifyJs, JadeCompile, EjsCompile));
+    watch(config.path.js.libs, Libs, JadeCompile, EjsCompile);
 };
 
 /*
  * You could even use `export as` to rename exported tasks
  */
-exports.build = series(Clean, series(Libs, SpriteAndImgCompress), parallel(Sass, series(HintJs, ConcatJs, UglifyJs)), JadeCompile);
+exports.build = series(Clean, series(Libs, SpriteAndImgCompress), parallel(Sass, series(HintJs, ConcatJs, UglifyJs)), JadeCompile, EjsCompile);
 
 /*
  * You could even use `export as` to rename exported tasks
@@ -191,4 +206,4 @@ exports.watch = parallel(Server, BrowserOpen, FileWatch);
 /*
  * Export a default task
  */
-exports.default = series(Clean, series(Libs, SpriteAndImgCompress), parallel(Sass, series(HintJs, ConcatJs, UglifyJs)), JadeCompile, parallel(Server, BrowserOpen, FileWatch));
+exports.default = series(Clean, series(Libs, SpriteAndImgCompress), parallel(Sass, series(HintJs, ConcatJs, UglifyJs)), JadeCompile, EjsCompile, parallel(Server, BrowserOpen, FileWatch));

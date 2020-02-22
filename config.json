@@ -6,10 +6,18 @@
     "del": {
       "dest": "dist/"
     },
+    "browser": {
+      "dest": "dist/"
+    },
     "jade": {
       "src": "src/jade/**/!(_)*.jade",
       "parts": "src/jade/parts/*.jade",
-      "dest": "dist/"
+      "dest": "dist/jade/"
+    },
+    "ejs": {
+      "src": "src/ejs/**/!(_)*.ejs",
+      "parts": "src/ejs/parts/*.ejs",
+      "dest": "dist/ejs/"
     },
     "sass": {
       "src": "src/sass/**/*.{scss, sass}",
