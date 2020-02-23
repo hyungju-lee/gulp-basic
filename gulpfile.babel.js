@@ -22,6 +22,7 @@
 // vinyl-buffer     : gulp.spritesmith 모듈과 gulp-imagemin 모듈을 연결시켜주는 모듈
 // merge-stream     : stream을 merge시켜주는 모듈, 종료신호를 묶어서 보낼 수 있다.
 
+import fs from 'fs';
 import {src, dest, watch, series, parallel} from 'gulp';
 import esLint from 'gulp-eslint';
 import jsConcat from 'gulp-concat';
@@ -43,6 +44,26 @@ import spritesmith from 'gulp.spritesmith';
 import buffer from 'vinyl-buffer';
 import merge from 'merge-stream';
 import config from './config.json';
+
+
+export const fsReadDir = () => {
+    let fileList;
+    let fileList2 = [];
+    fileList = fs.readdirSync('./src/ejs/', {
+        encoding: 'utf8',
+        withFileTypes: true
+    });
+    fileList.forEach(function (file, index) {
+        if (!file.isDirectory()) {
+            fileList2.push(file.name)
+        }
+    });
+    console.log(fileList);
+    console.log(fileList[0].isDirectory());
+    console.log(fileList[3].isDirectory());
+    console.log(fileList2);
+};
+
 
 /*
  * For small tasks you can export arrow functions
@@ -104,7 +125,7 @@ const Sass = () => {
             outputStyle: 'compact' // nested, expanded, compact, compressed
         }).on('error', sass.logError))
         .pipe(postcss([autoprefixer()]))
-        .pipe(cleanCss({ format: 'keep-breaks' }))
+        .pipe(cleanCss({format: 'keep-breaks'}))
         .pipe(dest(config.path.sass.dest, {sourcemaps: true}))
         .pipe(connect.reload())
 };

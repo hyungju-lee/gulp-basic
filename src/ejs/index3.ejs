@@ -1,0 +1,33 @@
+<html lang="ko">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title><%= title %></title>
+    <style> body {
+            font-size: 12pt;
+            color: #006666;
+        }
+
+        h1 {
+            font-size: 18pt;
+            background-color: #AAFFFF;
+        }
+
+        pre {
+            background-color: #EEEEEE;
+        }
+    </style>
+</head>
+<body>
+<%
+    var title = 'ejs'
+ %>
+<h1><%= title %></h1>
+<p>Welcome to <%= title %>, 오잉 되네? 아싸 문법정리만 하자, 사용법만 확실하게 익히고 lastRun도 추가하고</p>
+<button class="<%= title %>" type="submit">전송</button>
+<input type="text" placeholder="<%= title + '연습' %>">
+
+EJS에서 변수는 &lt;%= %&gt;로 감쌉니다. <br>
+내부에 변수를 사용할 수도 있습니다. <br>
+자바스크립트 코드는 &lt;% %&gt; 안에 적어줍니다.
+</body>
+</html>
