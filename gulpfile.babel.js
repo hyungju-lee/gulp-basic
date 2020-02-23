@@ -23,7 +23,7 @@
 // merge-stream     : stream을 merge시켜주는 모듈, 종료신호를 묶어서 보낼 수 있다.
 
 import fs from 'fs';
-import {src, dest, watch, series, parallel} from 'gulp';
+import {src, dest, watch, series, parallel, lastRun} from 'gulp';
 import esLint from 'gulp-eslint';
 import jsConcat from 'gulp-concat';
 import jsUglify from 'gulp-uglify';
@@ -163,7 +163,7 @@ const Libs = () => {
 
 // Jade 컴파일
 const JadeCompile = () => {
-    return src(config.path.jade.src)
+    return src(config.path.jade.src, {since: lastRun(JadeCompile)})
         .pipe(jade({
             pretty: true
         }))
@@ -173,7 +173,7 @@ const JadeCompile = () => {
 
 // ejs 컴파일
 const EjsCompile = () => {
-    return src(config.path.ejs.src)
+    return src(config.path.ejs.src, {since: lastRun(EjsCompile)})
         .pipe(ejs({
             msg: "Hello Gulp!"
         }))
