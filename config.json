@@ -15,7 +15,7 @@
       "dest": "dist/jade/"
     },
     "ejs": {
-      "src": "src/ejs/**/!(_)*.ejs",
+      "src": "src/ejs/**/!(_)*.{ejs,html}",
       "parts": "src/ejs/parts/*.ejs",
       "dest": "dist/ejs/"
     },
