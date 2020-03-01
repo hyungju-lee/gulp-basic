@@ -8,12 +8,12 @@
 // gulp-babel       : es6를 es5로 컴파일 해주는 모듈
 // gulp-rename      : 파일의 이름을 바꿔주는 모듈
 // gulp-jade        : HTML 템플릿 중 하나인 jade 템플릿을 사용할 수 있게 하는 모듈
+// gulp-ejs         : HTML 템플릿 중 하나인 ejs 템플릿을 사용할 수 있게 하는 모듈
 // gulp-sass        : sass를 사용할 수 있게 해주는 모듈
 // gulp-clean-css   : css 파일을 이쁘게 압축해주는 모듈
 // del              : 폴더(디렉터리)/파일 제거
 // gulp-connect     : local 서버와 연결하게 해주는 모듈
 // gulp-open        : 브라우저를 열게하는 모듈
-// gulp-plumber     : 오류가 나도 gulp 실행이 끊기게 하지 않는 모듈 (지워도될듯)
 // gulp-sass-lint   : sass 문법검사 모듈
 // autoprefixer     : vend prefix를 자동으로 달아주는 모듈
 // gulp-postcss     : 위 autoprefixer와 같이 쓰는 모듈
@@ -45,7 +45,7 @@ import buffer from 'vinyl-buffer';
 import merge from 'merge-stream';
 import config from './config.json';
 
-
+// 테스트 중인 기능
 export const fsReadDir = () => {
     let fileList;
     let fileList2 = [];
@@ -196,7 +196,7 @@ const Server = () => {
 // 브라우저 오픈 업무
 const BrowserOpen = () => {
     const options = {
-        uri: 'http://localhost:' + config.port,
+        uri: `http://localhost:${config.port}`,
         app: config.browser //chrome, firefox, iexplore, opera, safari
     };
     return src(config.path.browser.dest)
